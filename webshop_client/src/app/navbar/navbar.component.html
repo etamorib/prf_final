@@ -1,0 +1,33 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<nav class="navbar navbar-expand-lg  px-0 py-0" style="background: linear-gradient(to right, #FF4B2B, #FF416C) !important;">
+  <div class="container-xl">
+    <a class="navbar-brand" href="#">
+      <img  src="https://i.pinimg.com/originals/50/26/4e/50264e93aa486b4e54e140e6c8fb973a.png" class="h-10" alt="...">
+    </a>
+    <!-- Navbar toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- Nav -->
+      <div class="navbar-nav mx-lg-auto">
+        <a class="nav-item nav-link custom-nav-item" [routerLink]="['/product-a', 'Hamburger']">Burgers</a>
+        <a class="nav-item nav-link custom-nav-item"  [routerLink]="['/product-a', 'Drink']">Drinks</a>
+        <a class="nav-item nav-link custom-nav-item"  [routerLink]="['/product-a', 'Dessert']">Desserts</a>
+        
+        <a *ngIf="isLocalStorageValue() == true" class="nav-item nav-link custom-nav-item" [routerLink]="['/mycart']">Your order <i class="fa fa-shopping-basket"></i> ({{(items$ | async).length}} ) </a>
+
+      </div>
+      <!-- Right navigation -->
+      <div *ngIf="isLocalStorageValue() == false" class="navbar-nav ms-lg-4">
+        <a class="nav-item nav-link custom-nav-item"  [routerLink]="['/login']">Sign in <i class="fa fa-sign-in"></i></a>
+      </div>
+      <div *ngIf="isLocalStorageValue() == true" class="navbar-nav ms-lg-4">
+        <a class="nav-item nav-link custom-nav-item" [routerLink]="['/logout']"> Log out <i class="fa fa-sign-out"></i></a>
+      </div>
+
+    </div>
+  </div>
+</nav>

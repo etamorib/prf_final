@@ -1,0 +1,26 @@
+
+@import url(https://unpkg.com/@webpixels/css@1.0/dist/index.css);
+
+* {
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+.custom-nav-item {
+  font-size: 15px;
+  color: #fff !important;
+}
+
+.custom-nav-item:hover {
+  color:black !important;
+}
+
+.follow-icons {
+  font-size: 35px;
+  padding: 10px 10px 10px 10px;
+}
+
+.logo {
+  width: 20px;
+}
